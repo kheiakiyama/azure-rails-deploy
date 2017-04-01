@@ -1,0 +1,25 @@
+---
+- hosts: rails
+  vars:
+    branch: 'master'
+    dest: '{{ ansible_env.HOME }}/application'
+    unicorn_pid: '{{ dest }}/tmp/pids/unicorn.pid'
+    rails_env: 'production'
+    colon: ':'
+    ruby_version: 2.2.3
+    unicorn_sock: '/tmp/unicorn.sock'
+    env:
+      RAILS_ENV: '{{ rails_env }}'
+      PATH: '{{ ansible_env.HOME }}/.rbenv/shims:{{ ansible_env.PATH }}'
+  tasks:
+    - include: tasks/iptables.yml
+#    - include: tasks/git.yml
+    - include: tasks/ruby.yml
+    - include: tasks/bundle.yml
+    - include: tasks/nginx.yml
+    - include: tasks/unicorn.yml
+    - include: tasks/assets.yml
+    - include: tasks/service.yml
+  handlers:
+    - name: restart iptables
+      service: name=iptables state=restarted
