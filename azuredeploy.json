@@ -397,7 +397,10 @@
           ],
           "commandToExecute": "[variables('customScriptSSHRootCommand')]"
         },
-        "protectedSettings": { }
+        "protectedSettings": {
+          "storageAccountName": "[parameters('sshStorageAccountName')]",
+          "storageAccountKey": "[parameters('sshStorageAccountKey')]"
+        }
       }
     },
     {
@@ -508,9 +511,12 @@
             "[variables('ansiblePlaybookUrl')]",
             "[variables('pythonAzureScriptUrl')]"
           ],
-          "commandToExecute": "[concat(variables('customScriptAnsibleCommand'),variables('customScriptAnsibleParameters'),' -a ', parameters('sshStorageAccountName'),' -k ', parameters('sshStorageAccountKey'))]"
+          "commandToExecute": "[concat(variables('customScriptAnsibleCommand'),variables('customScriptAnsibleParameters'))]"
         },
-        "protectedSettings": { }
+        "protectedSettings": {
+          "storageAccountName": "[parameters('sshStorageAccountName')]",
+          "storageAccountKey": "[parameters('sshStorageAccountKey')]"
+        }
       }
     }
   ],
