@@ -38,13 +38,6 @@
         "description": "VM Size, for Premium Storage specify DS VMs."
       }
     },
-    "vmSizeDataDisks": {
-      "type": "int",
-      "defaultValue": 120,
-      "metadata": {
-        "description": "Data disks Size in GBs"
-      }
-    },
     "linuxFileSystem": {
       "type": "string",
       "allowedValues": [
@@ -368,9 +361,7 @@
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          },
-          "dataDisks": [
-          ]
+          }
         },
 
         "networkProfile": {
@@ -488,9 +479,7 @@
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          },
-          "dataDisks": [
-          ]
+          }
         },
         "networkProfile": {
           "networkInterfaces": [
