@@ -387,17 +387,15 @@
       ],
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
-		"type": "CustomScript",
-		"typeHandlerVersion": "2.0",
-		"autoUpgradeMinorVersion": true,
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
+        "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
             "[variables('customScriptSSHRootUrl')]",
             "[variables('pythonAzureScriptUrl')]"
           ],
-          "commandToExecute": "[variables('customScriptSSHRootCommand')]",
-          "protectedSettings": { }
-
+          "commandToExecute": "[variables('customScriptSSHRootCommand')]"
         }
       }
     },
@@ -509,8 +507,7 @@
             "[variables('ansiblePlaybookUrl')]",
             "[variables('pythonAzureScriptUrl')]"
           ],
-          "commandToExecute": "[concat(variables('customScriptAnsibleCommand'),variables('customScriptAnsibleParameters'),' -a ', parameters('sshStorageAccountName'),' -k ', parameters('sshStorageAccountKey'))]",
-          "protectedSettings": { }
+          "commandToExecute": "[concat(variables('customScriptAnsibleCommand'),variables('customScriptAnsibleParameters'),' -a ', parameters('sshStorageAccountName'),' -k ', parameters('sshStorageAccountKey'))]"
         }
       }
     }
