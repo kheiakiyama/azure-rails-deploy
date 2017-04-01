@@ -396,7 +396,8 @@
             "[variables('pythonAzureScriptUrl')]"
           ],
           "commandToExecute": "[variables('customScriptSSHRootCommand')]"
-        }
+        },
+        "protectedSettings": { }
       }
     },
     {
@@ -508,7 +509,8 @@
             "[variables('pythonAzureScriptUrl')]"
           ],
           "commandToExecute": "[concat(variables('customScriptAnsibleCommand'),variables('customScriptAnsibleParameters'),' -a ', parameters('sshStorageAccountName'),' -k ', parameters('sshStorageAccountKey'))]"
-        }
+        },
+        "protectedSettings": { }
       }
     }
   ],
