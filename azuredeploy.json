@@ -394,10 +394,10 @@
           "fileUris": [
             "[variables('customScriptSSHRootUrl')]",
             "[variables('pythonAzureScriptUrl')]"
-          ],
-          "commandToExecute": "[variables('customScriptSSHRootCommand')]"
+          ]
         },
         "protectedSettings": {
+          "commandToExecute": "[variables('customScriptSSHRootCommand')]",
           "storageAccountName": "[parameters('sshStorageAccountName')]",
           "storageAccountKey": "[parameters('sshStorageAccountKey')]"
         }
@@ -510,10 +510,10 @@
             "[variables('customScriptAnsibleUrl')]",
             "[variables('ansiblePlaybookUrl')]",
             "[variables('pythonAzureScriptUrl')]"
-          ],
-          "commandToExecute": "[concat(variables('customScriptAnsibleCommand'),variables('customScriptAnsibleParameters'))]"
+          ]
         },
         "protectedSettings": {
+          "commandToExecute": "[concat(variables('customScriptAnsibleCommand'),variables('customScriptAnsibleParameters'))]",
           "storageAccountName": "[parameters('sshStorageAccountName')]",
           "storageAccountKey": "[parameters('sshStorageAccountKey')]"
         }
